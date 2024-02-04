@@ -46,10 +46,12 @@ const App = () => {
         <div className="App">
             <div id='container'>
                 <p className='text'>{text}</p>
-                <button className='button' onClick={() => fireFunc('оружие убивает людей, это финиш, пора мыть посуду', startIdi, '/finish.jpg')} disabled={dis}>ПОЛУЧИТЬ ПОДАРОК!!!!!</button>
+                <button className='button' onClick={() => fireFunc('оружие убивает людей, это конец моего поздравления, пора мыть посуду', startIdi, '/finish.jpg')} disabled={dis}>ПОЛУЧИТЬ ПОДАРОК!!!!!</button>
                 <img src={src} id='img' onClick={() => {
                     yaySound.play()
-                    setDis(false)
+                    setTimeout(() => {
+                        setDis(false)
+                    }, 7000)
                     setText('желаю тебе:...')
                     setSrc('/guns.jpg')
                 }}/>
