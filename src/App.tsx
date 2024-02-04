@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import './App.css';
 
 const App = () => {
-    const nahui = new Audio('/idinahui.mp3')
-    const dr = new Audio('/alegroznaal.mp3')
-    const yaySound = new Audio('/yay.mp3')
+    const nahui = new Audio('./idinahui.mp3')
+    const dr = new Audio('./alegroznaal.mp3')
+    const yaySound = new Audio('./yay.mp3')
 
     const [text, setText] = useState('с днем рождения катя это мое поздравление')
-    const [src, setSrc] = useState('/katya.jpg')
+    const [src, setSrc] = useState('./katya.jpg')
     const [dis, setDis] = useState<boolean>(true)
 
     const startIdi = () => {
@@ -46,14 +46,14 @@ const App = () => {
         <div className="App">
             <div id='container'>
                 <p className='text'>{text}</p>
-                <button className='button' onClick={() => fireFunc('оружие убивает людей, это конец моего поздравления, пора мыть посуду', startIdi, '/finish.jpg')} disabled={dis}>ПОЛУЧИТЬ ПОДАРОК!!!!!</button>
+                <button className='button' onClick={() => fireFunc('оружие убивает людей, это конец моего поздравления, пора мыть посуду', startIdi, './finish.jpg')} disabled={dis}>ПОЛУЧИТЬ ПОДАРОК!!!!!</button>
                 <img src={src} id='img' onClick={() => {
                     yaySound.play()
                     setTimeout(() => {
                         setDis(false)
                     }, 7000)
                     setText('желаю тебе:...')
-                    setSrc('/guns.jpg')
+                    setSrc('./guns.jpg')
                 }}/>
             </div>
         </div>
