@@ -48,6 +48,7 @@ const App = () => {
                 <p className='text'>{text}</p>
                 <button className='button' onClick={() => fireFunc('оружие убивает людей, это финиш, пора мыть посуду', startIdi, '/finish.jpg')} disabled={dis}>ПОЛУЧИТЬ ПОДАРОК!!!!!</button>
                 <img src={src} id='img' onClick={() => {
+                    yaySound.play()
                     setDis(false)
                     setText('желаю тебе:...')
                     setSrc('/guns.jpg')
